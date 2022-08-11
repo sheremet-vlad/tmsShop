@@ -1,9 +1,13 @@
 package com.teachmeskills.entity.shop;
 
-import com.teachmeskills.entity.Customer;
-import com.teachmeskills.entity.Employee;
-import com.teachmeskills.entity.Product;
+import com.teachmeskills.entity.CustomerEntity.Customer;
+import com.teachmeskills.entity.CustomerEntity.Customer;
+import com.teachmeskills.entity.employee.Employee;
+import com.teachmeskills.entity.products.Product;
 import com.teachmeskills.entity.Supplier;
+import com.teachmeskills.entity.employee.Employee;
+import com.teachmeskills.entity.products.Product;
+
 //магазины - открыть, закрыть, ремонт, переучет, уборка, прочитать книгу пожеланий
 public class Shop
 {
@@ -19,11 +23,13 @@ public class Shop
 
     private WishBook wishBook;
 
+    private int unp;
+
     public Shop() {
     }
 
     public Shop(String name, String address, ShopSize shopSize, Employee[] employees, Product[] products,
-                Supplier[] suppliers, Customer[] customers) {
+                Supplier[] suppliers, Customer[] customers, int unp) {
         this.name = name;
         this.address = address;
         this.shopSize = shopSize;
@@ -31,6 +37,15 @@ public class Shop
         this.products = products;
         this.suppliers = suppliers;
         this.customers = customers;
+        this.unp = unp;
+    }
+
+    public int getUnp() {
+        return unp;
+    }
+
+    public void setUnp(int unp) {
+        this.unp = unp;
     }
 
     public String getName() {
