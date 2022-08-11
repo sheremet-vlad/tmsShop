@@ -1,5 +1,5 @@
 package com.teachmeskills.entity.employee;
 
-public class Seller {
+public class Seller extends Employee {
     private byte numberСashbox;
 }
