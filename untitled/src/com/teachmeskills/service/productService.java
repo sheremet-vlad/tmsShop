@@ -4,14 +4,14 @@ import com.teachmeskills.entity.products.Product;
 
 import java.util.ArrayList;
 
-public class ProductService {
+public class productService {
 
-    public static ArrayList<Product> addProduct(Product product,  ArrayList<Product> products) {
+    public static ArrayList<Product> addCart(ArrayList<Product> products, Product product) {
         products.add(product);
         return products;
     }
 
-    public static ArrayList<Product> buy(Product product,  ArrayList<Product> products) {
+    public static ArrayList<Product> removeCart(ArrayList<Product> products, Product product) {
         for (int i = 0; i < products.size(); i++) {
             if (product == products.get(i)) {
                 products.remove(product);
@@ -19,4 +19,10 @@ public class ProductService {
         }
         return products;
     }
+
+    public void addToStore(final Product product, final int quantity)
+    {
+        product.setQuantity(product.getQuantity() + quantity);
+    }
+
 }
