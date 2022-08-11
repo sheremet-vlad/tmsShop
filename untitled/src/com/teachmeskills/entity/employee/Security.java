@@ -1,5 +1,5 @@
 package com.teachmeskills.entity.employee;
 
-public class Security {
+public class Security extends Employee {
     private String weapon;
 }
