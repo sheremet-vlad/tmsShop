@@ -1,12 +1,18 @@
 package com.teachmeskills.entity.products;
 
-public abstract class Product {
+public abstract class Product implements Comparable<Product>{
 
     private int productId;
     private String name;
     private double price;
     private  int quantity;
     private String typeProduct;
+
+    @Override
+    public int compareTo(Product o)
+    {
+        return Double.compare(this.price, o.price);
+    }
 
     public Product(int productId, String name, double price, int quantity, String typeProduct) {
         this.productId = productId;
@@ -62,5 +68,16 @@ public abstract class Product {
     public void setQuantity(int quantity)
     {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", typeProduct='" + typeProduct + '\'' +
+                '}';
     }
 }

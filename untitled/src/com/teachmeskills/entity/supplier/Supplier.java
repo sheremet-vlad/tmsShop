@@ -1,4 +1,4 @@
-package com.teachmeskills.entity;
+package com.teachmeskills.entity.supplier;
 
 public abstract class Supplier
 {

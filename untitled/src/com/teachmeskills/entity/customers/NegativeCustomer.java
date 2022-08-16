@@ -1,4 +1,4 @@
-package com.teachmeskills.entity.CustomerEntity;
+package com.teachmeskills.entity.customers;
 
 public class NegativeCustomer extends Customer implements Movable
 {
