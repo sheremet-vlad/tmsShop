@@ -11,6 +11,6 @@ public class TestShop {
         new WishBookNote("asdasd")};
         WishBook wishBook = new WishBook(wishBookNote);
         ShopService shopService = new ShopService();
-        shopService.readWishBook(wishBook);
+        //shopService.readWishBook(wishBook);
     }
 }

@@ -1,7 +1,7 @@
 package com.teachmeskills.service.CustomerService;
 
-import com.teachmeskills.entity.CustomerEntity.Customer;
-import com.teachmeskills.entity.CustomerEntity.PositiveCustomer;
+import com.teachmeskills.entity.customers.Customer;
+import com.teachmeskills.entity.customers.PositiveCustomer;
 import com.teachmeskills.entity.products.Product;
 
 public class CustomerService

@@ -5,6 +5,8 @@ import com.teachmeskills.entity.employee.Employee;
 import com.teachmeskills.entity.products.Product;
 import com.teachmeskills.entity.supplier.Supplier;
 
+import java.util.List;
+
 //магазины - открыть, закрыть, ремонт, переучет, уборка, прочитать книгу пожеланий
 public class Shop
 {
