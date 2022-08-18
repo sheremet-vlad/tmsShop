@@ -7,7 +7,17 @@ public abstract class Customer
     private String[] customerWishList;
     private String[] ordersHistory;
 
+    private String[] customerBucket;
+
     private double customerMoney;
+
+    public String[] getCustomerBucket() {
+        return customerBucket;
+    }
+
+    public void setCustomerBucket(String[] customerBucket) {
+        this.customerBucket = customerBucket;
+    }
 
     public String getCustomerFirstName() {
         return customerFirstName;
