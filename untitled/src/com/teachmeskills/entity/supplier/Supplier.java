@@ -8,7 +8,7 @@ public abstract class Supplier
  private String addressSupplier;
  private String emailAddress;
  private String bankAccount;
- private int unp;
+ private int supplierUnp;
 
  public Supplier(String nameSupplier, String numberContract, int phoneNumber, String addressSupplier,
                  String emailAddress, String bankAccount, int unp) {
@@ -18,7 +18,7 @@ public abstract class Supplier
   this.addressSupplier = addressSupplier;
   this.emailAddress = emailAddress;
   this.bankAccount = bankAccount;
-  this.unp = unp;
+  this.supplierUnp = unp;
  }
 
  public Supplier() {
@@ -72,12 +72,12 @@ public abstract class Supplier
   this.bankAccount = bankAccount;
  }
 
- public int getUnp() {
-  return unp;
+ public int getSupplierUnp() {
+  return supplierUnp;
  }
 
- public void setUnp(int unp) {
-  this.unp = unp;
+ public void setSupplierUnp(int supplierUnp) {
+  this.supplierUnp = supplierUnp;
  }
 
  @Override
@@ -89,7 +89,7 @@ public abstract class Supplier
           ", addressSupplier='" + addressSupplier + '\'' +
           ", emailAddress='" + emailAddress + '\'' +
           ", bankAccount='" + bankAccount + '\'' +
-          ", unp=" + unp +
+          ", unp=" + supplierUnp +
           '}';
  }
 }
