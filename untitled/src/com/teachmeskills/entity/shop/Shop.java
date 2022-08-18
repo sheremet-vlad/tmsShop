@@ -1,9 +1,11 @@
 package com.teachmeskills.entity.shop;
 
-import com.teachmeskills.entity.CustomerEntity.Customer;
-import com.teachmeskills.entity.Supplier;
+import com.teachmeskills.entity.customers.Customer;
 import com.teachmeskills.entity.employee.Employee;
 import com.teachmeskills.entity.products.Product;
+import com.teachmeskills.entity.supplier.Supplier;
+
+import java.util.List;
 
 //магазины - открыть, закрыть, ремонт, переучет, уборка, прочитать книгу пожеланий
 public class Shop
@@ -12,7 +14,7 @@ public class Shop
     private String address;
     private ShopSize shopSize;
     private Employee[] employees;
-    private Product[] products;
+    private List<Product> products;
     private Supplier[] suppliers;
     private Customer[] customers;
 
@@ -23,7 +25,7 @@ public class Shop
     public Shop() {
     }
 
-    public Shop(String name, String address, ShopSize shopSize, Employee[] employees, Product[] products,
+    public Shop(String name, String address, ShopSize shopSize, Employee[] employees, List<Product> products,
                 Supplier[] suppliers, Customer[] customers) {
         this.name = name;
         this.address = address;
@@ -66,11 +68,11 @@ public class Shop
         this.employees = employees;
     }
 
-    public Product[] getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Product[] products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 

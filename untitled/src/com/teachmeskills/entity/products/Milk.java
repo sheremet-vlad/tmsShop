@@ -8,9 +8,11 @@ public class Milk extends Product {
         this.weight = weight;
     }
 
-    @Override
-    public String toString()
-    {
-        return "Milk{" + "weight=" + weight + '}';
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 }
