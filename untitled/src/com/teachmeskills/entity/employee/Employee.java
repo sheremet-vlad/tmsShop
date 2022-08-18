@@ -5,10 +5,10 @@ public class Employee
     private String employeeName;
     private String employeeSurname;
     private String employeePosition;
-    private String salary;
+    private long salary;
     private byte employeeExperience;
 
-    public Employee(String employeeName, String employeeSurname, String employeePosition, String salary, byte employeeExperience) {
+    public Employee(String employeeName, String employeeSurname, String employeePosition, long salary, byte employeeExperience) {
         this.employeeName = employeeName;
         this.employeeSurname = employeeSurname;
         this.employeePosition = employeePosition;
@@ -43,11 +43,11 @@ public class Employee
         this.employeePosition = employeePosition;
     }
 
-    public String getSalary() {
+    public long getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(long salary) {
         this.salary = salary;
     }
 

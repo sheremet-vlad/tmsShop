@@ -1,9 +1,10 @@
 package com.teachmeskills.entity.shop;
 
-import com.teachmeskills.entity.Customer;
-import com.teachmeskills.entity.Employee;
-import com.teachmeskills.entity.Product;
+import com.teachmeskills.entity.CustomerEntity.Customer;
 import com.teachmeskills.entity.Supplier;
+import com.teachmeskills.entity.employee.Employee;
+import com.teachmeskills.entity.products.Product;
+
 //магазины - открыть, закрыть, ремонт, переучет, уборка, прочитать книгу пожеланий
 public class Shop
 {
