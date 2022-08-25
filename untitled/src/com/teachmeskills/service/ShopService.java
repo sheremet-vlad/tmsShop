@@ -2,6 +2,7 @@ package com.teachmeskills.service;
 
 import com.teachmeskills.entity.products.Product;
 import com.teachmeskills.entity.shop.Shop;
+import com.teachmeskills.entity.supplier.Supplier;
 import com.teachmeskills.interfaces.Addable;
 import com.teachmeskills.interfaces.Searchable;
 
@@ -43,4 +44,16 @@ public final class ShopService <T extends Shop> implements Addable<T, Product>, 
         }
         return null;
     }
+
+    public void addNoteToWishBook(T shop, String wishNote) {
+        shop.getWishBook().add(wishNote);
+    }
+
+    public void readWishBookNotes(T shop) {
+        System.out.println(shop.getWishBook().getWishBookNotes());
+    }
+    // принимает список магазинов, отдает высоконагруженные магазины(больше чем 30 сотрудников, > кастомер, открыт
+    // потом отсортируем оставшиеся магазины по количеству записей в книге пожеланий
+
+    // приходит список магазинов, каждому считаем среднюю зарплату, возвращаем магазин с наибольшой зп
 }

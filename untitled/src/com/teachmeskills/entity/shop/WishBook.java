@@ -1,20 +1,19 @@
 package com.teachmeskills.entity.shop;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class WishBook {
-    private WishBookNote[] wishBookNotes;
+    List<String> wishBookNotes = new ArrayList<>();
 
     public WishBook() {
     }
 
-    public WishBook(WishBookNote[] wishBookNotes) {
-        this.wishBookNotes = wishBookNotes;
+    public void add(String wishNote) {
+        wishBookNotes.add(wishNote);
     }
 
-    public WishBookNote[] getWishBookNotes() {
+    public List<String> getWishBookNotes() {
         return wishBookNotes;
-    }
-
-    public void setWishBookNotes(WishBookNote[] wishBookNotes) {
-        this.wishBookNotes = wishBookNotes;
     }
 }
