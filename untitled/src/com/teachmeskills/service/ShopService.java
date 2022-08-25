@@ -2,10 +2,13 @@ package com.teachmeskills.service;
 
 import com.teachmeskills.entity.products.Product;
 import com.teachmeskills.entity.shop.Shop;
+import com.teachmeskills.entity.shop.Statuses;
 import com.teachmeskills.entity.supplier.Supplier;
 import com.teachmeskills.interfaces.Addable;
 import com.teachmeskills.interfaces.Searchable;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public final class ShopService <T extends Shop> implements Addable<T, Product>, Searchable<T, Product> {
@@ -52,8 +55,18 @@ public final class ShopService <T extends Shop> implements Addable<T, Product>, 
     public void readWishBookNotes(T shop) {
         System.out.println(shop.getWishBook().getWishBookNotes());
     }
-    // принимает список магазинов, отдает высоконагруженные магазины(больше чем 30 сотрудников, > кастомер, открыт
+    // принимает список магазинов, отдает высоконагруженные магазины
+    // (больше чем 30 сотрудников, > кастомер, открыт
     // потом отсортируем оставшиеся магазины по количеству записей в книге пожеланий
+
+    public List<Shop> sortShops(List<Shop> shops) {
+        return shops.stream()
+                .filter(s -> s.getEmployees().size() >= 30
+                        && s.getCustomers().size() > 15
+                        && s.getStatuses().contains(Statuses.Open))
+                .sorted(Comparator.comparingInt(s -> s.getWishBook().getWishBookNotes().size()))
+                .toList();
+    }
 
     // приходит список магазинов, каждому считаем среднюю зарплату, возвращаем магазин с наибольшой зп
 }

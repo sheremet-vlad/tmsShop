@@ -13,20 +13,20 @@ public class Shop
     private String name;
     private String address;
     private ShopSize shopSize;
-    private Employee[] employees;
+    private List<Employee> employees;
     private List<Product> products;
     private Supplier[] suppliers;
-    private Customer[] customers;
+    private List<Customer> customers;
 
-    private Statuses[] statuses;
+    private List<Statuses> statuses;
 
     private WishBook wishBook;
 
     public Shop() {
     }
 
-    public Shop(String name, String address, ShopSize shopSize, Employee[] employees, List<Product> products,
-                Supplier[] suppliers, Customer[] customers) {
+    public Shop(String name, String address, ShopSize shopSize, List<Employee> employees, List<Product> products,
+                Supplier[] suppliers, List<Customer> customers, List<Statuses> statuses, WishBook wishBook) {
         this.name = name;
         this.address = address;
         this.shopSize = shopSize;
@@ -34,6 +34,8 @@ public class Shop
         this.products = products;
         this.suppliers = suppliers;
         this.customers = customers;
+        this.statuses = statuses;
+        this.wishBook = wishBook;
     }
 
     public String getName() {
@@ -60,11 +62,11 @@ public class Shop
         this.shopSize = shopSize;
     }
 
-    public Employee[] getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 
-    public void setEmployees(Employee[] employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
 
@@ -84,19 +86,19 @@ public class Shop
         this.suppliers = suppliers;
     }
 
-    public Customer[] getCustomers() {
+    public List<Customer> getCustomers() {
         return customers;
     }
 
-    public void setCustomers(Customer[] customers) {
+    public void setCustomers(List<Customer> customers) {
         this.customers = customers;
     }
 
-    public Statuses[] getStatuses() {
+    public List<Statuses> getStatuses() {
         return statuses;
     }
 
-    public void setStatuses(Statuses[] statuses) {
+    public void setStatuses(List<Statuses> statuses) {
         this.statuses = statuses;
     }
 
