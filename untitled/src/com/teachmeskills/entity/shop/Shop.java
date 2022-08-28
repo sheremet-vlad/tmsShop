@@ -5,6 +5,8 @@ import com.teachmeskills.entity.employee.Employee;
 import com.teachmeskills.entity.products.Product;
 import com.teachmeskills.entity.supplier.Supplier;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 //магазины - открыть, закрыть, ремонт, переучет, уборка, прочитать книгу пожеланий
@@ -13,10 +15,10 @@ public class Shop
     private String name;
     private String address;
     private ShopSize shopSize;
-    private List<Employee> employees;
+    private List<Employee> employees = new ArrayList<>();
     private List<Product> products;
-    private Supplier[] suppliers;
-    private List<Customer> customers;
+    private List<Supplier> suppliers = new ArrayList<>();
+    private List<Customer> customers = new ArrayList<>();
 
     private List<Statuses> statuses;
 
@@ -26,7 +28,7 @@ public class Shop
     }
 
     public Shop(String name, String address, ShopSize shopSize, List<Employee> employees, List<Product> products,
-                Supplier[] suppliers, List<Customer> customers, List<Statuses> statuses, WishBook wishBook) {
+                List<Supplier> suppliers, List<Customer> customers, List<Statuses> statuses, WishBook wishBook) {
         this.name = name;
         this.address = address;
         this.shopSize = shopSize;
@@ -78,11 +80,11 @@ public class Shop
         this.products = products;
     }
 
-    public Supplier[] getSuppliers() {
+    public List<Supplier> getSuppliers() {
         return suppliers;
     }
 
-    public void setSuppliers(Supplier[] suppliers) {
+    public void setSuppliers(List<Supplier> suppliers) {
         this.suppliers = suppliers;
     }
 
@@ -108,5 +110,32 @@ public class Shop
 
     public void setWishBook(WishBook wishBook) {
         this.wishBook = wishBook;
+    }
+
+    public String printClassForShopSortingTesting() {
+        return "Shop{employees=" + employees.size() +
+                ", customers=" + customers.size() +
+                ", statuses=" + statuses +
+                ", wishBook=" + wishBook.getWishBookNotes().size() +
+                '}';
+    }
+
+    public String printClassToFindShopWithHighestSalary() {
+        return "Shop{" + employees + "}";
+    }
+
+    @Override
+    public String toString() {
+        return "Shop{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", shopSize=" + shopSize +
+                ", employees=" + employees +
+                ", products=" + products +
+                ", suppliers=" + suppliers +
+                ", customers=" + customers +
+                ", statuses=" + statuses +
+                ", wishBook=" + wishBook +
+                '}';
     }
 }
