@@ -4,6 +4,9 @@ import com.teachmeskills.entity.products.Product;
 import com.teachmeskills.entity.shop.Shop;
 import com.teachmeskills.interfaces.Addable;
 import com.teachmeskills.interfaces.Searchable;
+import com.teachmeskills.entity.customers.Customer;
+import com.teachmeskills.entity.employee.Employee;
+import com.teachmeskills.entity.supplier.Supplier;
 
 import java.util.List;
 
@@ -42,5 +45,32 @@ public final class ShopService <T extends Shop> implements Addable<T, Product>, 
             }
         }
         return null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void addSupplier(Shop shop, Supplier supplier)
+    {
+        shop.addSupplier(supplier);
+    }
+    public void addEmployee(Shop shop, Employee employee)
+    {
+        shop.addEmployee(employee);
+    }
+    public void addCustomer(Shop shop, Customer customer)
+    {
+        shop.addCustomer(customer);
     }
 }

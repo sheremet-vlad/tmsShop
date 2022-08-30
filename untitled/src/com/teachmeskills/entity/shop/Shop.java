@@ -13,20 +13,19 @@ public class Shop
     private String name;
     private String address;
     private ShopSize shopSize;
-    private Employee[] employees;
+    private List<Employee> employees;
     private List<Product> products;
-    private Supplier[] suppliers;
-    private Customer[] customers;
-
-    private Statuses[] statuses;
+    private List<Supplier> suppliers;
+    private List<Customer> customers;
+    private List<Statuses> statuses;
 
     private WishBook wishBook;
 
     public Shop() {
     }
 
-    public Shop(String name, String address, ShopSize shopSize, Employee[] employees, List<Product> products,
-                Supplier[] suppliers, Customer[] customers) {
+    public Shop(String name, String address, ShopSize shopSize, List <Employee> employees, List<Product> products,
+                List<Supplier> suppliers, List <Customer> customers) {
         this.name = name;
         this.address = address;
         this.shopSize = shopSize;
@@ -60,14 +59,17 @@ public class Shop
         this.shopSize = shopSize;
     }
 
-    public Employee[] getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 
-    public void setEmployees(Employee[] employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
-
+    public void addEmployee(Employee employee)
+    {
+        employees.add(employee);
+    }
     public List<Product> getProducts() {
         return products;
     }
@@ -76,27 +78,33 @@ public class Shop
         this.products = products;
     }
 
-    public Supplier[] getSuppliers() {
+    public List<Supplier> getSuppliers() {
         return suppliers;
     }
 
-    public void setSuppliers(Supplier[] suppliers) {
+    public void setSuppliers(List <Supplier> suppliers) {
         this.suppliers = suppliers;
     }
-
-    public Customer[] getCustomers() {
+    public void addSupplier(Supplier supplier)
+    {
+        suppliers.add(supplier);
+    }
+    public List<Customer> getCustomers() {
         return customers;
     }
 
-    public void setCustomers(Customer[] customers) {
+    public void setCustomers(List<Customer> customers) {
         this.customers = customers;
     }
-
-    public Statuses[] getStatuses() {
+    public void addCustomer(Customer customer)
+    {
+        customers.add(customer);
+    }
+    public List<Statuses> getStatuses() {
         return statuses;
     }
 
-    public void setStatuses(Statuses[] statuses) {
+    public void setStatuses(List<Statuses> statuses) {
         this.statuses = statuses;
     }
 
