@@ -5,8 +5,6 @@ import com.teachmeskills.entity.employee.Employee;
 import com.teachmeskills.entity.products.Product;
 import com.teachmeskills.entity.supplier.Supplier;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 //магазины - открыть, закрыть, ремонт, переучет, уборка, прочитать книгу пожеланий
@@ -15,20 +13,20 @@ public class Shop
     private String name;
     private String address;
     private ShopSize shopSize;
-    private List<Employee> employees = new ArrayList<>();
+    private Employee[] employees;
     private List<Product> products;
-    private List<Supplier> suppliers = new ArrayList<>();
-    private List<Customer> customers = new ArrayList<>();
+    private Supplier[] suppliers;
+    private Customer[] customers;
 
-    private List<Statuses> statuses;
+    private Statuses[] statuses;
 
     private WishBook wishBook;
 
     public Shop() {
     }
 
-    public Shop(String name, String address, ShopSize shopSize, List<Employee> employees, List<Product> products,
-                List<Supplier> suppliers, List<Customer> customers, List<Statuses> statuses, WishBook wishBook) {
+    public Shop(String name, String address, ShopSize shopSize, Employee[] employees, List<Product> products,
+                Supplier[] suppliers, Customer[] customers) {
         this.name = name;
         this.address = address;
         this.shopSize = shopSize;
@@ -36,8 +34,6 @@ public class Shop
         this.products = products;
         this.suppliers = suppliers;
         this.customers = customers;
-        this.statuses = statuses;
-        this.wishBook = wishBook;
     }
 
     public String getName() {
@@ -64,11 +60,11 @@ public class Shop
         this.shopSize = shopSize;
     }
 
-    public List<Employee> getEmployees() {
+    public Employee[] getEmployees() {
         return employees;
     }
 
-    public void setEmployees(List<Employee> employees) {
+    public void setEmployees(Employee[] employees) {
         this.employees = employees;
     }
 
@@ -80,27 +76,27 @@ public class Shop
         this.products = products;
     }
 
-    public List<Supplier> getSuppliers() {
+    public Supplier[] getSuppliers() {
         return suppliers;
     }
 
-    public void setSuppliers(List<Supplier> suppliers) {
+    public void setSuppliers(Supplier[] suppliers) {
         this.suppliers = suppliers;
     }
 
-    public List<Customer> getCustomers() {
+    public Customer[] getCustomers() {
         return customers;
     }
 
-    public void setCustomers(List<Customer> customers) {
+    public void setCustomers(Customer[] customers) {
         this.customers = customers;
     }
 
-    public List<Statuses> getStatuses() {
+    public Statuses[] getStatuses() {
         return statuses;
     }
 
-    public void setStatuses(List<Statuses> statuses) {
+    public void setStatuses(Statuses[] statuses) {
         this.statuses = statuses;
     }
 
@@ -110,32 +106,5 @@ public class Shop
 
     public void setWishBook(WishBook wishBook) {
         this.wishBook = wishBook;
-    }
-
-    public String printClassForShopSortingTesting() {
-        return "Shop{employees=" + employees.size() +
-                ", customers=" + customers.size() +
-                ", statuses=" + statuses +
-                ", wishBook=" + wishBook.getWishBookNotes().size() +
-                '}';
-    }
-
-    public String printClassToFindShopWithHighestSalary() {
-        return "Shop{" + employees + "}";
-    }
-
-    @Override
-    public String toString() {
-        return "Shop{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", shopSize=" + shopSize +
-                ", employees=" + employees +
-                ", products=" + products +
-                ", suppliers=" + suppliers +
-                ", customers=" + customers +
-                ", statuses=" + statuses +
-                ", wishBook=" + wishBook +
-                '}';
     }
 }
