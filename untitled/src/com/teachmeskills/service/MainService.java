@@ -3,20 +3,25 @@ package com.teachmeskills.service;
 import com.teachmeskills.entity.employee.Manager;
 import com.teachmeskills.entity.employee.Security;
 import com.teachmeskills.entity.employee.Seller;
+import com.teachmeskills.entity.supplier.Supplier;
+import com.teachmeskills.entity.supplier.SupplierChemical;
+import com.teachmeskills.json.ObjectToJson;
+
+import java.io.IOException;
 
 public class MainService
 {
-    public static void main(String[] args) {
-        EmployeeService employeeService = new EmployeeService();
+    public static void main(String[] args) throws IOException {
+        SupplierChemical supplier = new SupplierChemical();
+        supplier.setAddressSupplier("Antoniuk street");
+        supplier.setNameSupplier("Chemic");
+        supplier.setBankAccount("8478234");
+        supplier.setPhoneNumber(942763874);
 
-        employeeService.takeEmployee(new Security("OLeg", " Ivanov",
-                "Security", 500L, (byte) 5, "Пистолет"));
+        ObjectToJson objectToJson = new ObjectToJson();
 
-        employeeService.takeEmployee(new Manager("Kirill", " Smoler",
-                "Manager", 1000L, (byte) 10, (byte) 5));
-
-        employeeService.printEmployeeList();
-
-        employeeService.fireEmployee(1);
+        objectToJson.ConvertToJSON(supplier, "D://");
+        Supplier newsup = objectToJson.ConvertFromJONtoObject(SupplierChemical.class, "D:\\TMS\\tmsShop\\book.json");
+        newsup.toString();
     }
 }
