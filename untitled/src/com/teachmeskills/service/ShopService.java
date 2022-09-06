@@ -77,7 +77,11 @@ public final class ShopService<T extends Shop> implements Addable<T, Product>, S
     public static Shop getShopWithHighestSalary(List<Shop> shops) {
          return shops.stream()
                 .collect(Collectors.groupingBy(Function.identity(),
-                        Collectors.averagingDouble(s -> s.getEmployees().stream().mapToDouble(Employee::getSalary).average().orElse(0.0))))
+                        Collectors.averagingDouble(s -> s
+                                .getEmployees()
+                                .stream()
+                                .mapToDouble(Employee::getSalary)
+                                .average().orElse(0.0))))
                 .entrySet()
                 .stream()
                 .max(Map.Entry.comparingByValue())
