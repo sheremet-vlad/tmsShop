@@ -91,4 +91,20 @@ public class Shop
     public void setCustomers(Customer[] customers) {
         this.customers = customers;
     }
+
+    public Statuses[] getStatuses() {
+        return statuses;
+    }
+
+    public void setStatuses(Statuses[] statuses) {
+        this.statuses = statuses;
+    }
+
+    public WishBook getWishBook() {
+        return wishBook;
+    }
+
+    public void setWishBook(WishBook wishBook) {
+        this.wishBook = wishBook;
+    }
 }

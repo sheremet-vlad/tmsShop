@@ -8,6 +8,22 @@ public class Milk extends Product {
         this.weight = weight;
     }
 
+    public Milk() {
+        super();
+    }
+
+    @Override
+    public Product cloneProduct() {
+        return new Milk(
+                super.getProductId(),
+                super.getName(),
+                super.getPrice(),
+                super.getQuantity(),
+                super.getTypeProduct(),
+                this.weight
+        );
+    }
+
     public double getWeight() {
         return weight;
     }

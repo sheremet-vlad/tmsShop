@@ -1,26 +1,33 @@
 package com.teachmeskills.entity.products;
 
-public abstract class Product implements Comparable<Product>{
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.CLASS,
+        property = "@class"
+)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = Milk.class, name = "Milk"),
+        @JsonSubTypes.Type(value = Chocolate.class, name = "Chocolate"),
+        @JsonSubTypes.Type(value = Water.class, name = "Water")
+})
+public abstract class Product {
     private int productId;
     private String name;
     private double price;
     private  int quantity;
     private String typeProduct;
 
-    @Override
-    public int compareTo(Product o)
-    {
-        return Double.compare(this.price, o.price);
-    }
-
-    public Product(int productId, String name, double price, int quantity, String typeProduct) {
+    protected Product(int productId, String name, double price, int quantity, String typeProduct) {
         this.productId = productId;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.typeProduct = typeProduct;
     }
+
+    protected Product() {}
 
     public String getTypeProduct() {
         return typeProduct;
@@ -80,4 +87,6 @@ public abstract class Product implements Comparable<Product>{
                 ", typeProduct='" + typeProduct + '\'' +
                 '}';
     }
+
+    public abstract Product cloneProduct();
 }

@@ -2,7 +2,6 @@ package com.teachmeskills.service;
 
 import com.teachmeskills.entity.employee.Manager;
 import com.teachmeskills.entity.employee.Security;
-import com.teachmeskills.entity.employee.Seller;
 
 public class MainService
 {
