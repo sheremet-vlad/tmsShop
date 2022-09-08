@@ -1,4 +1,4 @@
-package com.teachmeskills.entity.CustomerEntity;
+package com.teachmeskills.entity.customer;
 
 public abstract class Customer
 {
@@ -58,5 +58,7 @@ public abstract class Customer
     public void setCustomerMoney(double customerMoney) {
         this.customerMoney = customerMoney;
     }
-
+// cравнить стринги для истории вывести ммакисмальную
+// нам приходит список кастомеров, пройтись по листу и вывести имя и фамилию каждого
+// вывести сумму всех их денег
 }

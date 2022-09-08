@@ -1,6 +1,6 @@
 package com.teachmeskills.entity.shop;
 
-import com.teachmeskills.entity.CustomerEntity.Customer;
+import com.teachmeskills.entity.customer.Customer;
 import com.teachmeskills.entity.Supplier;
 import com.teachmeskills.entity.employee.Employee;
 import com.teachmeskills.entity.products.Product;

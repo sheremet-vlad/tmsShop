@@ -1,4 +1,4 @@
-package com.teachmeskills.entity.CustomerEntity;
+package com.teachmeskills.entity.customer;
 
 public class PositiveCustomer extends Customer implements Movable
 {
