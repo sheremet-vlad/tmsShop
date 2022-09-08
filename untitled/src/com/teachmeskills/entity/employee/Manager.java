@@ -3,7 +3,8 @@ package com.teachmeskills.entity.employee;
 public class Manager extends Employee {
     private byte amountSubordinates;
 
-    public Manager(String employeeName, String employeeSurname, String employeePosition, long salary, byte employeeExperience, byte amountSubordinates) {
+    public Manager(String employeeName, String employeeSurname, String employeePosition, long salary,
+                   byte employeeExperience, byte amountSubordinates) {
         super(employeeName, employeeSurname, employeePosition, salary, employeeExperience);
         this.amountSubordinates = amountSubordinates;
     }
@@ -26,7 +27,7 @@ public class Manager extends Employee {
                 "employeeName ='" + getEmployeeName() + '\'' +
                 ", employeeSurname = '" + getEmployeeSurname() + '\'' +
                 ", employeePosition = '" + getEmployeePosition() + '\'' +
-                ", salary = " + getEmployeeExperience() +
+                ", salary = " + getEmployeeSalary() +
                 ", employeeExperience = " + getEmployeeExperience() + ", " +
                 "amountSubordinates = " + amountSubordinates + '}';
     }

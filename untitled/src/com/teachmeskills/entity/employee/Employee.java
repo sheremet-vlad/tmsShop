@@ -1,18 +1,17 @@
 package com.teachmeskills.entity.employee;
 
-public class Employee
-{
+public class Employee implements Comparable<Employee> {
     private String employeeName;
     private String employeeSurname;
     private String employeePosition;
-    private long salary;
+    private long employeeSalary;
     private byte employeeExperience;
 
-    public Employee(String employeeName, String employeeSurname, String employeePosition, long salary, byte employeeExperience) {
+    public Employee(String employeeName, String employeeSurname, String employeePosition, long employeeSalary, byte employeeExperience) {
         this.employeeName = employeeName;
         this.employeeSurname = employeeSurname;
         this.employeePosition = employeePosition;
-        this.salary = salary;
+        this.employeeSalary = employeeSalary;
         this.employeeExperience = employeeExperience;
     }
 
@@ -43,12 +42,12 @@ public class Employee
         this.employeePosition = employeePosition;
     }
 
-    public long getSalary() {
-        return salary;
+    public long getEmployeeSalary() {
+        return employeeSalary;
     }
 
-    public void setSalary(long salary) {
-        this.salary = salary;
+    public void setEmployeeSalary(long employeeSalary) {
+        this.employeeSalary = employeeSalary;
     }
 
     public byte getEmployeeExperience() {
@@ -65,8 +64,13 @@ public class Employee
                 "employeeName='" + employeeName + '\'' +
                 ", employeeSurname='" + employeeSurname + '\'' +
                 ", employeePosition='" + employeePosition + '\'' +
-                ", salary='" + salary + '\'' +
+                ", salary='" + employeeSalary + '\'' +
                 ", employeeExperience=" + employeeExperience +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return Integer.compare(this.getEmployeeExperience(), (int)o.getEmployeeExperience());
     }
 }

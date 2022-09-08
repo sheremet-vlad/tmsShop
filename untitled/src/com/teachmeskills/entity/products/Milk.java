@@ -8,6 +8,12 @@ public class Milk extends Product {
         this.weight = weight;
     }
 
+    public Milk(double weight) {
+        this.weight = weight;
+    }
+
+
+
     @Override
     public String toString()
     {

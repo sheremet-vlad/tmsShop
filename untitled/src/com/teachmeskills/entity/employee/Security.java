@@ -3,7 +3,8 @@ package com.teachmeskills.entity.employee;
 public class Security extends Employee {
     private String weapon;
 
-    public Security(String employeeName, String employeeSurname, String employeePosition, long salary, byte employeeExperience, String weapon) {
+    public Security(String employeeName, String employeeSurname, String employeePosition,
+                    long salary, byte employeeExperience, String weapon) {
         super(employeeName, employeeSurname, employeePosition, salary, employeeExperience);
         this.weapon = weapon;
     }
@@ -18,7 +19,7 @@ public class Security extends Employee {
                         "employeeName = '" + getEmployeeName() + '\'' +
                         ", employeeSurname = '" + getEmployeeSurname() + '\'' +
                         ", employeePosition = '" + getEmployeePosition() + '\'' +
-                        ", salary = " + getEmployeeExperience() +
+                        ", salary = " + getEmployeeSalary() +
                         ", employeeExperience = " + getEmployeeExperience() + ", " +
                          "weapon='" + weapon + '\'' + '}';
     }

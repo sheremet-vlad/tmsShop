@@ -4,7 +4,8 @@ public class Seller extends Employee {
     private byte numberСashbox;
     private long dayRevenue;
 
-    public Seller(String employeeName, String employeeSurname, String employeePosition, long salary, byte employeeExperience, byte numberСashbox, long dayRevenue) {
+    public Seller(String employeeName, String employeeSurname, String employeePosition,
+                  long salary, byte employeeExperience, byte numberСashbox, long dayRevenue) {
         super(employeeName, employeeSurname, employeePosition, salary, employeeExperience);
         this.numberСashbox = numberСashbox;
         this.dayRevenue = dayRevenue;
@@ -29,5 +30,16 @@ public class Seller extends Employee {
 
     public void setDayRevenue(long dayRevenue) {
         this.dayRevenue = dayRevenue;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeName = '" + getEmployeeName() + '\'' +
+                ", employeeSurname = '" + getEmployeeSurname() + '\'' +
+                ", employeePosition = '" + getEmployeePosition() + '\'' +
+                ", salary = " + getEmployeeSalary() +
+                ", employeeExperience = " + getEmployeeExperience() + ", " +
+                "numberCashbox ='" + numberСashbox + '\'' + ", dayRevenue=" + dayRevenue + '}';
     }
 }

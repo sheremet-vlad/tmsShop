@@ -1,7 +1,6 @@
 package com.teachmeskills.entity.products;
 
 public abstract class Product {
-
     private int productId;
     private String name;
     private double price;
@@ -14,6 +13,9 @@ public abstract class Product {
         this.price = price;
         this.quantity = quantity;
         this.typeProduct = typeProduct;
+    }
+
+    public Product() {
     }
 
     public String getTypeProduct() {
